@@ -3,6 +3,11 @@ name = "virtualalloc"
 version = "0.1.0"
 authors = ["Grégoire Geis <git@gregoirege.is>"]
 repository = "https://github.com/6A/virtualalloc"
+license = "MIT"
+description = """
+An allocator based on VirtualAlloc or mmap, that can grow without invalidating pointers to\
+its contents.
+"""
 
 [target.'cfg(windows)'.dependencies]
 kernel32-sys = "^0.2"
@@ -11,6 +16,5 @@ kernel32-sys = "^0.2"
 speculate = "^0.0"
 
 [features]
-default = ["allocator", "std"]
-allocator = []
+default = ["std"]
 std = []
